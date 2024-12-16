@@ -2784,6 +2784,10 @@ input, select, textarea {
 			}
 
 		}
+/* Special Styling for Right-Side Image */
+        .spotlight.right-image {
+            flex-direction: row-reverse;
+        }
 
 /* Wrapper */
 
