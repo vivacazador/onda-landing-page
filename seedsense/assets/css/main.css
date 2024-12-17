@@ -1324,8 +1324,8 @@ input, select, textarea {
 			}
 
 		#header nav ul {
-			display: -moz-flex;
-			display: -webkit-flex;
+			display: flex;
+			justify-content: center;   /* Center items */
 			display: -ms-flex;
 			display: flex;
 			margin-bottom: 0;
