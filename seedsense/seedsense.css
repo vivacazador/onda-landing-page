@@ -82,7 +82,7 @@ ul {
 /* 3. BUTTONS */
 
 .btn {
-  display: inline-block;
+  display: grid;
   padding: 0.75rem 1.25rem;
   border-radius: 4px;
   border: 1px solid var(--border-color);
@@ -1191,4 +1191,41 @@ ul {
   .features-section .card.reverse-layout {
     flex-direction: column;
   }
+}
+/* Contact/Demo Buttons */
+.contact-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.contact-demo .btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  font-size: 1.2rem;
+  text-align: center;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-primary {
+  background-color: #28593b;
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background-color: #1e472d;
+  transform: scale(1.05);
+}
+
+.btn-secondary {
+  background-color: #e6f7ed;
+  color: #3e7f4c;
+}
+
+.btn-secondary:hover {
+  background-color: #e6f7ed;
+  transform: scale(1.05);
 }
