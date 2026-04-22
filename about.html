@@ -456,9 +456,61 @@
         .d2 { transition-delay: 0.2s; }
         .d3 { transition-delay: 0.3s; }
 
+        /* ── TEAM GRID ───────────────────────────────── */
+        .team-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 28px;
+        }
+
+        .team-label::before {
+            content: '';
+            width: 22px; height: 2px;
+            background: var(--accent);
+            border-radius: 2px;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 12px;
+            margin-bottom: 24px;
+        }
+
+        .team-photo-card {
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid var(--border);
+            aspect-ratio: 3/4;
+            background: var(--bg-card);
+            transition: border-color 0.3s, transform 0.3s;
+        }
+
+        .team-photo-card:hover {
+            border-color: var(--border-hover);
+            transform: translateY(-3px);
+        }
+
+        .team-photo-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center top;
+            opacity: 0.85;
+            transition: opacity 0.3s;
+        }
+
+        .team-photo-card:hover img { opacity: 1; }
+
         /* ── RESPONSIVE ──────────────────────────────── */
         @media (max-width: 800px) {
-            .founders-grid { grid-template-columns: 1fr; }
+            .team-grid { grid-template-columns: repeat(2, 1fr); }
             .values-grid { grid-template-columns: 1fr; }
             .story-card { padding: 44px 36px; }
             .cta-box { padding: 48px 32px; }
@@ -502,6 +554,34 @@
             <h2>Our Story</h2>
             <p>Onda Software Solutions was founded by two friends from California Polytechnic in San Luis Obispo. Drawing on a shared background in farming and computer science, Joao and Hunter set out to address niche software problems that larger companies overlook — starting with agriculture and expanding from there.</p>
             <p>We believe the next decade will belong to businesses that embrace technology on their own terms. Our job is to build the tools that make that possible — practical, opinionated software that fits how your team actually works, not how a generic platform assumes you do.</p>
+        </div>
+
+        <!-- Team -->
+        <div class="fade-up d1">
+            <div class="team-label">The Team</div>
+            <div class="team-grid">
+                <div class="team-photo-card">
+                    <img src="https://www.cavalcantineto.com.br/img/Foto2.png" alt="Team member" />
+                </div>
+                <div class="team-photo-card">
+                    <img src="https://www.cavalcantineto.com.br/img/Foto11.png" alt="Team member" />
+                </div>
+                <div class="team-photo-card">
+                    <img src="https://www.cavalcantineto.com.br/img/Foto12.png" alt="Team member" />
+                </div>
+                <div class="team-photo-card">
+                    <img src="https://www.cavalcantineto.com.br/img/Foto16.png" alt="Team member" />
+                </div>
+                <div class="team-photo-card">
+                    <img src="https://www.cavalcantineto.com.br/img/Foto18.png" alt="Team member" />
+                </div>
+                <div class="team-photo-card">
+                    <img src="https://www.cavalcantineto.com.br/img/Foto24.png" alt="Team member" />
+                </div>
+                <div class="team-photo-card">
+                    <img src="https://www.cavalcantineto.com.br/img/Foto33.png" alt="Team member" />
+                </div>
+            </div>
         </div>
 
         <!-- Values -->
