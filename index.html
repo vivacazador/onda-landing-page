@@ -1,161 +1,1103 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Onda Software — We Build Software That Works</title>
+    <meta name="description" content="Onda Software Solutions builds custom software to solve real business challenges. From seed trial management to contractor pricing tools.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #08080e;
+            --bg-2: #0f0f18;
+            --bg-card: #131320;
+            --bg-card-hover: #18182a;
+            --accent: #5b6af7;
+            --accent-2: #7c3aed;
+            --accent-glow: rgba(91,106,247,0.15);
+            --text: #ededf5;
+            --text-muted: #8080a0;
+            --text-faint: #35354a;
+            --border: rgba(255,255,255,0.07);
+            --border-hover: rgba(255,255,255,0.14);
+            --radius: 20px;
+            --shadow: 0 24px 64px rgba(0,0,0,0.6);
+        }
 
-<html>
-	<head>
-		<title>Onda Software Solutions</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
-	<body class="landing is-preload">
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-		<!-- Page Wrapper -->
-			<div id="page-wrapper">
+        html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
 
-				<!-- Header -->
-					<header id="header" class="alt">
-						<h1><a href="index.html">Onda Software Solutions</a></h1>
-						
-					</header>
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
 
-				<!-- Banner -->
-					<section id="banner">
-						
-						<a href="#one" class="more scrolly">Learn More</a>
-					</section>
+        a { color: inherit; text-decoration: none; }
+        img { max-width: 100%; display: block; }
 
-				<!-- One -->
-					<section id="one" class="wrapper style1 special">
-						<div class="inner">
-							<header class="major">
-								<h2>In the next 20 years, embracing technology will be key to staying competitive. At Onda Software Solutions, we build custom software to solve your challenges, enhance productivity, and drive growth. Let us help you become a tech-forward company.</h2>
-								<p>Take a look at some of the products we have built or have under development now.</p>
-							</header>
-						
-						</div>
-					</section>
+        /* ── NAV ─────────────────────────────────────── */
+        nav {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            z-index: 100;
+            padding: 22px 48px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            transition: all 0.3s ease;
+        }
 
-					<!-- Two -->
-					<section id="two" class="wrapper alt style2">
-						<!-- Spotlight 1: SeedSense -->
-						<a href="https://seedsensesoftware.com/" target="_blank" style="text-decoration: none; color: inherit;">
-							<section class="spotlight">
-								<div class="image">
-									<img src="images/fields.jpg" alt="SeedSense" />
-								</div>
-								<div class="content">
-									<h2>SeedSense</h2>
-									<h2>A new way to manage product development</h2>
-									<p>
-										Onda Solution's flagship product, SeedSense, is a fully built software program for seed trialing and R&D. From planting and management to evaluations and keeping track of your records - SeedSense has you covered. More details can be found at our SeedSense website.
-									</p>
-								</div>
-							</section>
-						</a>
+        nav.scrolled {
+            background: rgba(8,8,14,0.88);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            border-bottom: 1px solid var(--border);
+            padding: 14px 48px;
+        }
 
-						<!-- Spotlight 2: SeedSense for Producers -->
-						<a href="https://seedsensesoftware.com/" target="_blank" style="text-decoration: none; color: inherit;">
-							<section class="spotlight right-image">
-								<div class="image">
-									<img src="images/seedprod.gif" alt="SeedSense for Producers" />
-								</div>
-								<div class="content">
-									<h2>SeedSense for Producers</h2>
-									<h3>Under Development</h3>
-									<p>
-										We are actively looking for partners — seed breeders and producers — who can provide real-world feedback, trial data, and insights to help us refine and expand SeedSense. Our goal is to build tools that address your specific needs, such as multi-phase trial management, advanced analytics, and regional performance tracking, ensuring the software delivers maximum value for your research and development workflows.
-									</p>
-								</div>
-							</section>
-						</a>
+        .nav-logo {
+            font-size: 1.05rem;
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            color: #fff;
+        }
 
-						<!-- Spotlight 3: Custom Product for Contracting Industry -->
-						<a href="https://accupricelists.com/" target="_blank" style="text-decoration: none; color: inherit;">
-							<section class="spotlight">
-								<div class="image">
-									<img src="images/aplogo.png" alt="Custom Product for Contractors" />
-								</div>
-								<div class="content">
-									<h2>AccuPrice</h2>
-									<h3>Now Available</h3>
-									<p>
-										We have developed a custom application to help contractors markup their products with up-to-date pricing.
-									</p>
-								</div>
-							</section>
-						</a>
-					</section>
+        .nav-logo span { color: var(--accent); }
 
-				<!-- Three -->
-					<section id="three" class="wrapper style3 special">
-						<div class="inner">
-							<header class="major">
-								<h2>How we can work with you</h2>
-								<p>If you are intrested in working with us to develop a custom solution for your business, here's are the steps to how we work.</p>
-							</header>
-							<ul class="features">
-								<li class="icon solid fa-laptop">
-									<h3>Problem</h3>
-									<p>Every business faces unique challenges. We start by deeply understanding your specific issues through thorough consultations and analysis. Our goal is to address root causes, not just symptoms, ensuring optimal efficiency and growth.</p>
-								</li>
-								<li class="icon solid fa-laptop">
-									<h3>Custom Solution</h3>
-									<p>After identifying the problem, we craft bespoke software tailored to your needs. Our solutions fit seamlessly into your operations, aligning with your goals and existing systems. This collaborative approach ensures robust, custom tools that empower your business.</p>
-								</li>
-								<li class="icon solid fa-code">
-									<h3>Software Design</h3>
-									<p>In the design phase, we create intuitive, user-friendly interfaces. Our detailed wireframes and mockups let you visualize the end product early on. Prioritizing user experience, we refine designs based on your feedback for a perfect fit.</p>
-								</li>
-								<li class="icon solid fa-code">
-									<h3>Software Development</h3>
-									<p>With the design approved, our developers use the latest technologies to bring your custom software to life. Our agile process allows for flexibility and continuous improvement, with regular updates and open communication to ensure the final product meets your expectations.</p>
-								</li>
-								<li class="icon fa-flag">
-									<h3>Deployment</h3>
-									<p>After development, we ensure a smooth transition to your new software. Thorough testing and seamless setup minimize disruptions. Our team provides training and support, helping your team adapt quickly and effectively.</p>
-								</li>
-								<li class="icon fa-flag">
-									<h3>Maintance</h3>
-									<p>Our support doesn't end with deployment. We offer ongoing maintenance to keep your software performing at its best. Regular updates, bug fixes, and enhancements ensure your solution evolves with your needs, allowing you to focus on your business confidently.</p>
-								</li>
-							</ul>
-						</div>
-					</section>
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 36px;
+            list-style: none;
+        }
 
-				<!-- CTA -->
-					<section id="cta" class="wrapper style4">
-						<div class="inner">
-							<header>
-								<h2>Ready to connect?</h2>
-								
-							</header>
-							<ul class="actions stacked">
-								<li><a href="contact" class="button fit primary">Contact Us</a></li>
-								<li><a href="about" class="button fit">Who We Are</a></li>
-							</ul>
-						</div>
-					</section>
+        .nav-links a {
+            font-size: 0.88rem;
+            font-weight: 500;
+            color: var(--text-muted);
+            transition: color 0.2s;
+        }
 
-				<!-- Footer -->
-					<footer id="footer">
-						
-						<ul class="copyright">
-							<li> Onda Software Solutions LLC </li>
-							 <li><a href="https://ondasoftware.com/seedsensepolicy" target="_blank">Privacy Policy</a></li>
-						</ul>
-					</footer>
+        .nav-links a:hover { color: var(--text); }
 
-			</div>
+        .nav-cta {
+            padding: 9px 22px;
+            background: var(--accent);
+            border-radius: 100px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #fff !important;
+            transition: all 0.2s ease;
+        }
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+        .nav-cta:hover {
+            background: #6b7af9;
+            transform: translateY(-1px);
+            box-shadow: 0 8px 24px rgba(91,106,247,0.45);
+        }
 
-	</body>
+        /* ── HERO ────────────────────────────────────── */
+        #hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 130px 24px 90px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        #hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse 80% 55% at 50% -5%, rgba(91,106,247,0.28) 0%, transparent 62%),
+                radial-gradient(ellipse 50% 45% at 78% 65%, rgba(124,58,237,0.13) 0%, transparent 55%),
+                radial-gradient(ellipse 40% 40% at 18% 80%, rgba(91,106,247,0.09) 0%, transparent 55%);
+            animation: pulseGrad 8s ease-in-out infinite alternate;
+        }
+
+        @keyframes pulseGrad {
+            0% { opacity: 0.65; transform: scale(1); }
+            100% { opacity: 1; transform: scale(1.06); }
+        }
+
+        #hero::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image:
+                linear-gradient(rgba(255,255,255,0.022) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,0.022) 1px, transparent 1px);
+            background-size: 64px 64px;
+            mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 20%, transparent 80%);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 880px;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 18px;
+            background: rgba(91,106,247,0.11);
+            border: 1px solid rgba(91,106,247,0.24);
+            border-radius: 100px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: #a0a8fb;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            margin-bottom: 36px;
+        }
+
+        .hero-badge::before {
+            content: '';
+            width: 6px; height: 6px;
+            background: var(--accent);
+            border-radius: 50%;
+            animation: blink 2s ease-in-out infinite;
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 1; box-shadow: 0 0 8px var(--accent); }
+            50% { opacity: 0.3; box-shadow: none; }
+        }
+
+        .hero-title {
+            font-size: clamp(3.2rem, 8.5vw, 6.5rem);
+            font-weight: 800;
+            line-height: 1.04;
+            letter-spacing: -0.045em;
+            margin-bottom: 30px;
+        }
+
+        .hero-title .gradient-text {
+            background: linear-gradient(130deg, #8b99ff 0%, #c084fc 50%, #818cf8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            background-size: 200% 200%;
+            animation: gradShift 5s ease infinite;
+        }
+
+        @keyframes gradShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1.05rem, 2vw, 1.25rem);
+            font-weight: 400;
+            color: var(--text-muted);
+            line-height: 1.75;
+            max-width: 580px;
+            margin: 0 auto 52px;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 14px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            padding: 15px 36px;
+            background: var(--accent);
+            border-radius: 100px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: #fff;
+            transition: all 0.25s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-primary::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(255,255,255,0.18) 0%, transparent 100%);
+            opacity: 0;
+            transition: opacity 0.25s;
+        }
+
+        .btn-primary:hover::after { opacity: 1; }
+        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 14px 36px rgba(91,106,247,0.45); }
+
+        .btn-secondary {
+            padding: 15px 36px;
+            border-radius: 100px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--text);
+            border: 1px solid var(--border);
+            background: rgba(255,255,255,0.04);
+            transition: all 0.25s ease;
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--border-hover);
+            background: rgba(255,255,255,0.08);
+            transform: translateY(-2px);
+        }
+
+        .scroll-hint {
+            position: absolute;
+            bottom: 44px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .scroll-hint span {
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--text-faint);
+        }
+
+        .scroll-line {
+            width: 1px;
+            height: 44px;
+            background: linear-gradient(to bottom, var(--text-faint), transparent);
+            animation: scrollAnim 2.2s ease-in-out infinite;
+        }
+
+        @keyframes scrollAnim {
+            0% { transform: scaleY(0); transform-origin: top; opacity: 1; }
+            45% { transform: scaleY(1); transform-origin: top; opacity: 1; }
+            55% { transform: scaleY(1); transform-origin: bottom; opacity: 1; }
+            100% { transform: scaleY(0); transform-origin: bottom; opacity: 0; }
+        }
+
+        /* ── LAYOUT ──────────────────────────────────── */
+        .section { padding: 130px 24px; }
+        .container { max-width: 1200px; margin: 0 auto; }
+
+        .section-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 18px;
+        }
+
+        .section-label::before {
+            content: '';
+            width: 22px; height: 2px;
+            background: var(--accent);
+            border-radius: 2px;
+        }
+
+        .section-title {
+            font-size: clamp(2.2rem, 4.5vw, 3.4rem);
+            font-weight: 800;
+            letter-spacing: -0.04em;
+            line-height: 1.08;
+            margin-bottom: 18px;
+        }
+
+        .section-desc {
+            font-size: 1.05rem;
+            color: var(--text-muted);
+            line-height: 1.75;
+            max-width: 520px;
+        }
+
+        /* ── STATS ───────────────────────────────────── */
+        #stats {
+            padding: 0 24px;
+            position: relative;
+            z-index: 2;
+            margin-top: -20px;
+        }
+
+        .stats-bar {
+            max-width: 860px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            overflow: hidden;
+        }
+
+        .stat-item {
+            padding: 38px 44px;
+            text-align: center;
+            border-right: 1px solid var(--border);
+        }
+
+        .stat-item:last-child { border-right: none; }
+
+        .stat-num {
+            font-size: 3rem;
+            font-weight: 900;
+            letter-spacing: -0.05em;
+            background: linear-gradient(135deg, #fff 0%, var(--text-muted) 130%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1;
+            margin-bottom: 8px;
+        }
+
+        .stat-lbl {
+            font-size: 0.82rem;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        /* ── PROJECTS ────────────────────────────────── */
+        #projects { padding-top: 160px; padding-bottom: 130px; padding-left: 24px; padding-right: 24px; }
+
+        .projects-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            gap: 32px;
+            margin-bottom: 56px;
+            flex-wrap: wrap;
+        }
+
+        .project-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            overflow: hidden;
+            transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
+            position: relative;
+            display: block;
+        }
+
+        .project-card:hover {
+            border-color: var(--border-hover);
+            transform: translateY(-5px);
+            box-shadow: var(--shadow);
+        }
+
+        .project-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent 0%, rgba(91,106,247,0.7) 50%, transparent 100%);
+            opacity: 0;
+            transition: opacity 0.35s;
+            z-index: 1;
+        }
+
+        .project-card:hover::before { opacity: 1; }
+
+        /* Featured — full width horizontal */
+        .project-card.featured {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            min-height: 420px;
+        }
+
+        .card-body {
+            padding: 52px 52px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .project-card.featured .card-body {
+            justify-content: center;
+        }
+
+        .project-tags {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-bottom: 24px;
+        }
+
+        .tag {
+            padding: 4px 12px;
+            border-radius: 100px;
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.03em;
+        }
+
+        .tag-blue {
+            background: rgba(91,106,247,0.12);
+            border: 1px solid rgba(91,106,247,0.22);
+            color: #a5adfb;
+        }
+
+        .tag-green {
+            background: rgba(52,211,153,0.1);
+            border: 1px solid rgba(52,211,153,0.22);
+            color: #6ee7b7;
+        }
+
+        .tag-orange {
+            background: rgba(251,146,60,0.1);
+            border: 1px solid rgba(251,146,60,0.22);
+            color: #fdba74;
+        }
+
+        .tag-purple {
+            background: rgba(167,139,250,0.1);
+            border: 1px solid rgba(167,139,250,0.22);
+            color: #c4b5fd;
+        }
+
+        .project-name {
+            font-size: 2.1rem;
+            font-weight: 800;
+            letter-spacing: -0.04em;
+            margin-bottom: 6px;
+            line-height: 1.1;
+        }
+
+        .project-headline {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--accent);
+            margin-bottom: 18px;
+            letter-spacing: -0.01em;
+        }
+
+        .project-desc {
+            font-size: 0.92rem;
+            color: var(--text-muted);
+            line-height: 1.8;
+            margin-bottom: 32px;
+            flex: 1;
+        }
+
+        .project-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            font-size: 0.88rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            transition: color 0.2s;
+            align-self: flex-start;
+        }
+
+        .project-link svg { transition: transform 0.2s; }
+        .project-card:hover .project-link { color: #fff; }
+        .project-card:hover .project-link svg { transform: translate(3px, -3px); }
+
+        /* Visual side */
+        .card-visual {
+            position: relative;
+            overflow: hidden;
+            background: var(--bg);
+        }
+
+        .card-visual img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.75;
+            transition: opacity 0.4s, transform 0.4s;
+        }
+
+        .project-card:hover .card-visual img {
+            opacity: 0.95;
+            transform: scale(1.04);
+        }
+
+        /* Bottom row */
+        .projects-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+            margin-top: 24px;
+        }
+
+        .project-card.compact .card-body {
+            padding: 38px 40px;
+        }
+
+        .project-card.compact .project-name {
+            font-size: 1.65rem;
+        }
+
+        .card-visual-sm {
+            height: 210px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            position: relative;
+            background: var(--bg);
+        }
+
+        .card-visual-sm::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse at center, rgba(91,106,247,0.12) 0%, transparent 70%);
+        }
+
+        .card-visual-sm img {
+            max-height: 110px;
+            max-width: 75%;
+            object-fit: contain;
+            opacity: 0.8;
+            transition: opacity 0.4s, transform 0.4s;
+            position: relative;
+            z-index: 1;
+        }
+
+        .project-card:hover .card-visual-sm img {
+            opacity: 1;
+            transform: scale(1.06);
+        }
+
+        .renew-icon {
+            position: relative;
+            z-index: 1;
+            opacity: 0.75;
+            transition: opacity 0.4s, transform 0.4s;
+        }
+
+        .project-card:hover .renew-icon {
+            opacity: 1;
+            transform: scale(1.06) rotate(5deg);
+        }
+
+        /* ── CAPABILITIES ────────────────────────────── */
+        #capabilities {
+            background: var(--bg-2);
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+            padding: 130px 24px;
+        }
+
+        .cap-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1px;
+            background: var(--border);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            overflow: hidden;
+            margin-top: 64px;
+        }
+
+        .cap-item {
+            background: var(--bg-2);
+            padding: 48px 42px;
+            transition: background 0.25s;
+        }
+
+        .cap-item:hover { background: var(--bg-card); }
+
+        .cap-icon {
+            width: 48px; height: 48px;
+            background: rgba(91,106,247,0.1);
+            border: 1px solid rgba(91,106,247,0.2);
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            margin-bottom: 22px;
+        }
+
+        .cap-title {
+            font-size: 1.05rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            margin-bottom: 10px;
+        }
+
+        .cap-desc {
+            font-size: 0.88rem;
+            color: var(--text-muted);
+            line-height: 1.75;
+        }
+
+        /* ── PROCESS ─────────────────────────────────── */
+        #process { padding: 130px 24px; }
+
+        .process-header {
+            max-width: 560px;
+            margin-bottom: 64px;
+        }
+
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .step-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 42px 42px;
+            position: relative;
+            transition: border-color 0.3s, transform 0.3s;
+            overflow: hidden;
+        }
+
+        .step-card:hover {
+            border-color: var(--border-hover);
+            transform: translateY(-3px);
+        }
+
+        .step-num {
+            position: absolute;
+            top: 28px; right: 32px;
+            font-size: 3.5rem;
+            font-weight: 900;
+            letter-spacing: -0.06em;
+            line-height: 1;
+            color: var(--text-faint);
+        }
+
+        .step-icon-box {
+            width: 42px; height: 42px;
+            background: rgba(91,106,247,0.1);
+            border: 1px solid rgba(91,106,247,0.2);
+            border-radius: 13px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            margin-bottom: 22px;
+        }
+
+        .step-card h3 {
+            font-size: 1.15rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            margin-bottom: 12px;
+        }
+
+        .step-card p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            line-height: 1.75;
+        }
+
+        /* ── CTA ─────────────────────────────────────── */
+        #cta-wrap { padding: 0 24px 130px; }
+
+        .cta-box {
+            max-width: 920px;
+            margin: 0 auto;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 28px;
+            padding: 90px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-box::before {
+            content: '';
+            position: absolute;
+            top: -60%; left: -50%;
+            width: 200%; height: 200%;
+            background: radial-gradient(ellipse at center, rgba(91,106,247,0.09) 0%, transparent 65%);
+            pointer-events: none;
+        }
+
+        .cta-box h2 {
+            font-size: clamp(2.2rem, 4vw, 3.2rem);
+            font-weight: 800;
+            letter-spacing: -0.045em;
+            margin-bottom: 18px;
+            position: relative;
+        }
+
+        .cta-box p {
+            font-size: 1.08rem;
+            color: var(--text-muted);
+            max-width: 500px;
+            margin: 0 auto 46px;
+            line-height: 1.75;
+            position: relative;
+        }
+
+        .cta-actions {
+            display: flex;
+            gap: 14px;
+            justify-content: center;
+            flex-wrap: wrap;
+            position: relative;
+        }
+
+        /* ── FOOTER ──────────────────────────────────── */
+        footer {
+            padding: 36px 48px;
+            border-top: 1px solid var(--border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .footer-logo {
+            font-size: 0.95rem;
+            font-weight: 800;
+            letter-spacing: -0.03em;
+        }
+
+        .footer-logo span { color: var(--accent); }
+
+        .footer-links {
+            display: flex;
+            gap: 28px;
+            list-style: none;
+        }
+
+        .footer-links a {
+            font-size: 0.83rem;
+            color: var(--text-muted);
+            transition: color 0.2s;
+        }
+
+        .footer-links a:hover { color: var(--text); }
+
+        .footer-copy {
+            font-size: 0.78rem;
+            color: var(--text-faint);
+        }
+
+        /* ── ANIMATIONS ──────────────────────────────── */
+        .fade-up {
+            opacity: 0;
+            transform: translateY(28px);
+            transition: opacity 0.65s ease, transform 0.65s ease;
+        }
+
+        .fade-up.in { opacity: 1; transform: translateY(0); }
+        .d1 { transition-delay: 0.08s; }
+        .d2 { transition-delay: 0.18s; }
+        .d3 { transition-delay: 0.28s; }
+        .d4 { transition-delay: 0.38s; }
+
+        /* ── RESPONSIVE ──────────────────────────────── */
+        @media (max-width: 960px) {
+            .project-card.featured { grid-template-columns: 1fr; }
+            .card-visual { height: 280px; order: -1; }
+            .projects-row { grid-template-columns: 1fr; }
+            .cap-grid { grid-template-columns: 1fr; }
+            .process-steps { grid-template-columns: 1fr; }
+            .stats-bar { grid-template-columns: 1fr; }
+            .stat-item { border-right: none; border-bottom: 1px solid var(--border); }
+            .stat-item:last-child { border-bottom: none; }
+            .cta-box { padding: 60px 40px; }
+            nav { padding: 16px 24px; }
+            nav.scrolled { padding: 12px 24px; }
+            .nav-links { display: none; }
+        }
+
+        @media (max-width: 600px) {
+            .section, #projects, #capabilities, #process { padding: 80px 18px; }
+            .card-body, .project-card.compact .card-body { padding: 30px 26px; }
+            .cta-box { padding: 48px 26px; }
+            footer { flex-direction: column; align-items: flex-start; }
+            .step-card { padding: 32px 28px; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="navbar">
+    <a href="/" class="nav-logo">Onda <span>Software</span></a>
+    <ul class="nav-links">
+        <li><a href="#projects">Work</a></li>
+        <li><a href="#capabilities">Capabilities</a></li>
+        <li><a href="#process">Process</a></li>
+        <li><a href="contact" class="nav-cta">Get in Touch</a></li>
+    </ul>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+    <div class="hero-content">
+        <div class="hero-badge">Custom Software Studio</div>
+        <h1 class="hero-title">
+            We build software<br>
+            that <span class="gradient-text">actually works.</span>
+        </h1>
+        <p class="hero-subtitle">
+            Onda Software Solutions partners with businesses to design and ship custom tools that solve real problems — from field trials to contractor pricing to subscription management.
+        </p>
+        <div class="hero-actions">
+            <a href="#projects" class="btn-primary">See Our Work</a>
+            <a href="contact" class="btn-secondary">Start a Project →</a>
+        </div>
+    </div>
+    <div class="scroll-hint">
+        <div class="scroll-line"></div>
+    </div>
+</section>
+
+<!-- STATS -->
+<div id="stats">
+    <div class="stats-bar fade-up">
+        <div class="stat-item">
+            <div class="stat-num">3+</div>
+            <div class="stat-lbl">Products Shipped</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-num">100%</div>
+            <div class="stat-lbl">Custom-Built</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-num">$240</div>
+            <div class="stat-lbl">Avg. User Savings / Year</div>
+        </div>
+    </div>
+</div>
+
+<!-- PROJECTS -->
+<section id="projects">
+    <div class="container">
+        <div class="projects-header">
+            <div>
+                <div class="section-label">Our Work</div>
+                <h2 class="section-title">Products we've<br>brought to life.</h2>
+            </div>
+            <p class="section-desc">Every product we build starts with a real problem worth solving — and ends with something people actually use.</p>
+        </div>
+
+        <!-- SeedSense — Featured -->
+        <a href="https://seedsensesoftware.com/" target="_blank" rel="noopener" class="project-card featured fade-up">
+            <div class="card-body">
+                <div class="project-tags">
+                    <span class="tag tag-green">Live</span>
+                    <span class="tag tag-blue">Ag Tech</span>
+                    <span class="tag tag-blue">Mobile + Web</span>
+                </div>
+                <div class="project-name">SeedSense</div>
+                <div class="project-headline">Reinvent Your Seed Trials</div>
+                <p class="project-desc">
+                    Our flagship product for seed companies and R&D teams. SeedSense consolidates planting, task management, crop evaluation, and reporting into one offline-capable mobile platform — with GPS mapping, customizable evaluation templates, and automated PDF reports. From field data to boardroom report. Zero spreadsheets needed.
+                </p>
+                <div class="project-link">
+                    Visit seedsensesoftware.com
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M7 17L17 7M17 7H7M17 7v10"/>
+                    </svg>
+                </div>
+            </div>
+            <div class="card-visual">
+                <img src="images/fields.jpg" alt="SeedSense — Field Trial Management Platform" />
+            </div>
+        </a>
+
+        <!-- Bottom row -->
+        <div class="projects-row">
+
+            <!-- AccuPrice -->
+            <a href="https://accupricelists.com/" target="_blank" rel="noopener" class="project-card compact fade-up d2">
+                <div class="card-visual-sm">
+                    <img src="images/aplogo.png" alt="AccuPrice" />
+                </div>
+                <div class="card-body">
+                    <div class="project-tags">
+                        <span class="tag tag-green">Live</span>
+                        <span class="tag tag-orange">Contracting</span>
+                    </div>
+                    <div class="project-name">AccuPrice</div>
+                    <div class="project-headline">Pricing Built for Electricians</div>
+                    <p class="project-desc">
+                        A pricing tool built specifically for service electricians and contractors. Integrates seamlessly with QuickBooks, Procore, Workiz, and Housecall Pro — keeping pricing accurate across your entire team without disrupting existing workflows.
+                    </p>
+                    <div class="project-link">
+                        Visit accupricelists.com
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M7 17L17 7M17 7H7M17 7v10"/>
+                        </svg>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Renew Reminder -->
+            <a href="https://renewreminder.com/" target="_blank" rel="noopener" class="project-card compact fade-up d3">
+                <div class="card-visual-sm" style="background: linear-gradient(135deg, #0c0c18 0%, #13131f 100%);">
+                    <svg class="renew-icon" width="90" height="90" viewBox="0 0 90 90" fill="none">
+                        <circle cx="45" cy="45" r="36" stroke="#5b6af7" stroke-width="1.5" stroke-dasharray="7 5" opacity="0.6"/>
+                        <circle cx="45" cy="45" r="24" stroke="#a78bfa" stroke-width="1" opacity="0.35"/>
+                        <path d="M45 25v20l13 9" stroke="#818cf8" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <circle cx="45" cy="45" r="4.5" fill="#5b6af7"/>
+                        <circle cx="45" cy="45" r="4.5" fill="#5b6af7" opacity="0.4">
+                            <animate attributeName="r" values="4.5;12;4.5" dur="2.5s" repeatCount="indefinite"/>
+                            <animate attributeName="opacity" values="0.4;0;0.4" dur="2.5s" repeatCount="indefinite"/>
+                        </circle>
+                    </svg>
+                </div>
+                <div class="card-body">
+                    <div class="project-tags">
+                        <span class="tag tag-green">Live</span>
+                        <span class="tag tag-purple">FinTech</span>
+                    </div>
+                    <div class="project-name">Renew Reminder</div>
+                    <div class="project-headline">Never Miss a Renewal Again</div>
+                    <p class="project-desc">
+                        Subscription management that actually saves money. Automatic detection, customizable reminders 7–30 days before renewal, and smart spending insights — saving users an average of $240 per year. No bank connection required.
+                    </p>
+                    <div class="project-link">
+                        Visit renewreminder.com
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M7 17L17 7M17 7H7M17 7v10"/>
+                        </svg>
+                    </div>
+                </div>
+            </a>
+
+        </div>
+    </div>
+</section>
+
+<!-- CAPABILITIES -->
+<section id="capabilities">
+    <div class="container">
+        <div class="section-label">What We Do</div>
+        <h2 class="section-title">Full-stack, from idea to launch.</h2>
+        <div class="cap-grid fade-up">
+            <div class="cap-item">
+                <div class="cap-icon">📱</div>
+                <div class="cap-title">Mobile Apps</div>
+                <p class="cap-desc">iOS and Android apps built for real-world conditions — including offline-first architecture for field and remote environments where signal is unreliable.</p>
+            </div>
+            <div class="cap-item">
+                <div class="cap-icon">🌐</div>
+                <div class="cap-title">Web Platforms</div>
+                <p class="cap-desc">Scalable web applications with clean interfaces and robust backends, designed to fit seamlessly into your existing tools and workflows.</p>
+            </div>
+            <div class="cap-item">
+                <div class="cap-icon">🔗</div>
+                <div class="cap-title">Integrations</div>
+                <p class="cap-desc">Connect your software with tools you already use — QuickBooks, Procore, Workiz, Jobber, and any platform with an API.</p>
+            </div>
+            <div class="cap-item">
+                <div class="cap-icon">📊</div>
+                <div class="cap-title">Data & Reporting</div>
+                <p class="cap-desc">Turn raw business data into actionable insights. We build custom dashboards, automated PDF exports, and analytics tailored to how you make decisions.</p>
+            </div>
+            <div class="cap-item">
+                <div class="cap-icon">⚙️</div>
+                <div class="cap-title">Spreadsheet Replacement</div>
+                <p class="cap-desc">If your team is running critical workflows on spreadsheets, we replace them with purpose-built tools that scale, track, and adapt as you grow.</p>
+            </div>
+            <div class="cap-item">
+                <div class="cap-icon">🛡️</div>
+                <div class="cap-title">Ongoing Support</div>
+                <p class="cap-desc">We don't disappear post-launch. Continuous maintenance, regular updates, and feature enhancements keep your software ahead of your business.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- PROCESS -->
+<section id="process" class="section">
+    <div class="container">
+        <div class="process-header">
+            <div class="section-label">How We Work</div>
+            <h2 class="section-title">A process that delivers real results.</h2>
+            <p class="section-desc">We treat every engagement as a long-term partnership. Here's how we go from problem to shipped product.</p>
+        </div>
+        <div class="process-steps fade-up">
+            <div class="step-card">
+                <div class="step-num">01</div>
+                <div class="step-icon-box">🔍</div>
+                <h3>Understand the Problem</h3>
+                <p>Every engagement starts with listening. We dig deep into your workflows, constraints, and goals through thorough consultations. We fix root causes — not symptoms.</p>
+            </div>
+            <div class="step-card d1">
+                <div class="step-num">02</div>
+                <div class="step-icon-box">✏️</div>
+                <h3>Design the Solution</h3>
+                <p>We craft intuitive interfaces and user flows tailored to how your team actually works. Wireframes and prototypes let you see and react to the product before a line of code is written.</p>
+            </div>
+            <div class="step-card d2">
+                <div class="step-num">03</div>
+                <div class="step-icon-box">💻</div>
+                <h3>Build & Iterate</h3>
+                <p>Our agile process means you see real progress continuously. Regular demos, open communication, and fast iteration cycles — no surprises at the end of a long development phase.</p>
+            </div>
+            <div class="step-card d3">
+                <div class="step-num">04</div>
+                <div class="step-icon-box">🚀</div>
+                <h3>Deploy & Support</h3>
+                <p>Smooth launch with thorough testing and team onboarding. Then we stay with you — shipping updates, fixing bugs, and building new features as your business evolves.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA -->
+<div id="cta-wrap">
+    <div class="container">
+        <div class="cta-box fade-up">
+            <h2>Have a problem worth solving?</h2>
+            <p>Tell us about your challenge. We'll tell you if we can build the right tool to fix it — no commitment required.</p>
+            <div class="cta-actions">
+                <a href="contact" class="btn-primary">Get in Touch</a>
+                <a href="about" class="btn-secondary">Learn About Us</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+    <div class="footer-logo">Onda <span>Software</span></div>
+    <ul class="footer-links">
+        <li><a href="#projects">Work</a></li>
+        <li><a href="about">About</a></li>
+        <li><a href="contact">Contact</a></li>
+        <li><a href="/seedsensepolicy">Privacy Policy</a></li>
+    </ul>
+    <div class="footer-copy">© 2025 Onda Software Solutions LLC</div>
+</footer>
+
+<script>
+    // Nav scroll effect
+    const nav = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+        nav.classList.toggle('scrolled', window.scrollY > 50);
+    }, { passive: true });
+
+    // Fade-up on scroll
+    const io = new IntersectionObserver((entries) => {
+        entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+    document.querySelectorAll('.fade-up').forEach(el => io.observe(el));
+</script>
+</body>
 </html>
