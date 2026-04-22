@@ -1,95 +1,514 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy — SeedSense by Onda Software</title>
+    <meta name="description" content="Privacy Policy for SeedSense by Onda Software Solutions LLC. Effective November 19, 2024.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #08080e;
+            --bg-2: #0f0f18;
+            --bg-card: #131320;
+            --accent: #5b6af7;
+            --text: #ededf5;
+            --text-muted: #8080a0;
+            --text-faint: #35354a;
+            --border: rgba(255,255,255,0.07);
+            --border-hover: rgba(255,255,255,0.14);
+            --radius: 20px;
+        }
 
-<html>
-	<head>
-		<title>SeedSense Privacy Policies - Onda Solutions</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
-	<body class="is-preload">
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
 
-		<!-- Page Wrapper -->
-			<div id="page-wrapper">
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            overflow-x: hidden;
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
 
-				
-				<!-- Main -->
-					<article id="main">
-						<header>
-							<h2>SeedSense Software</h2>
-							<p></p>
-						</header>
-						<section class="wrapper style5">
-							<div class="inner">
+        a { color: var(--accent); text-decoration: none; transition: color 0.2s; }
+        a:hover { color: #a5adfb; }
 
-								 <h1>Privacy Policy</h1>
-    <p>Effective Date: 11/19/2024</p>
+        /* ── NAV ─────────────────────────────────────── */
+        nav {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            z-index: 100;
+            padding: 22px 48px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: rgba(8,8,14,0.88);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            border-bottom: 1px solid var(--border);
+        }
 
-    <p>This Privacy Policy describes how Onda Software Solutions LLC ("we", "us", or "our") collects, uses, and protects the data of users ("you" or "your") when using our SeedSense software application ("SeedSense" or "the App"). By using SeedSense, you agree to the terms outlined in this policy.</p>
+        .nav-logo {
+            font-size: 1.05rem;
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            color: #fff;
+            text-decoration: none;
+        }
 
-    <h2>1. Data Collection</h2>
-    <p>SeedSense collects data inputted by users, including but not limited to company information, trial data and notes, user activity, and location data.</p>
+        .nav-logo span { color: var(--accent); }
 
-    <h2>2. Data Usage</h2>
-    <p>The data collected is used internally at Onda Software Solutions LLC for purposes including but not limited to training internal models, data analysis, and improving the functionality of the SeedSense application.</p>
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 36px;
+            list-style: none;
+        }
 
-    <h2>3. Data Sharing</h2>
-    <p>We do not share any collected data with third parties or other clients. Your data remains private and is used solely for internal purposes.</p>
+        .nav-links a {
+            font-size: 0.88rem;
+            font-weight: 500;
+            color: var(--text-muted);
+            transition: color 0.2s;
+            text-decoration: none;
+        }
 
-    <h2>4. Data Storage</h2>
-    <p>All collected data is stored on cloud servers with standard security measures in place to protect user data.</p>
+        .nav-links a:hover { color: var(--text); }
 
-    <h2>5. User Consent and Data Usage</h2>
-    <p>By using SeedSense, enterprise customers agree that data generated through the use of SeedSense will be collected and utilized internally by Onda Software Solutions LLC. Customers can contact us to request the deletion of their data at any time.</p>
+        .nav-cta {
+            padding: 9px 22px;
+            background: var(--accent);
+            border-radius: 100px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #fff !important;
+            transition: all 0.2s;
+        }
 
-    <h2>6. Data Retention</h2>
-    <p>Data is stored indefinitely unless a deletion request is made by the customer.</p>
+        .nav-cta:hover {
+            background: #6b7af9;
+            transform: translateY(-1px);
+            box-shadow: 0 8px 24px rgba(91,106,247,0.4);
+        }
 
-    <h2>7. User Data Access and Updates</h2>
-    <p>Users can update their data by adjusting it within the SeedSense platform, which will update the data we collect.</p>
+        /* ── MAIN ────────────────────────────────────── */
+        main {
+            flex: 1;
+            padding: 140px 24px 100px;
+            position: relative;
+        }
 
-    <h2>8. Security Measures</h2>
-    <p>We implement standard security protocols to protect your data, including secure cloud storage.</p>
+        main::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse 60% 40% at 50% -5%, rgba(91,106,247,0.18) 0%, transparent 60%);
+            pointer-events: none;
+        }
 
-    <h2>9. Third-Party Services</h2>
-    <p>We do not share data with third parties, with the exception of our cloud storage provider.</p>
+        .container {
+            max-width: 780px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
 
-    <h2>10. Age Restrictions</h2>
-    <p>SeedSense is limited to users 18 years and older.</p>
+        /* ── HEADER ──────────────────────────────────── */
+        .page-header {
+            margin-bottom: 52px;
+            padding-bottom: 40px;
+            border-bottom: 1px solid var(--border);
+        }
 
-    <h2>11. Device Permissions</h2>
-    <p>SeedSense may request device permissions such as access to your camera, location, and contacts. Users have the option to refuse GPS access on their devices.</p>
+        .breadcrumb {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-bottom: 28px;
+        }
 
-    <h2>12. Policy Updates</h2>
-    <p>Any updates to this Privacy Policy will be communicated to enterprise users via email.</p>
+        .breadcrumb a { color: var(--text-muted); text-decoration: none; transition: color 0.2s; }
+        .breadcrumb a:hover { color: var(--text); }
+        .breadcrumb span { color: var(--text-faint); }
 
-    <h2>13. Contact Information</h2>
-    <p>If you have any questions or concerns regarding this Privacy Policy, please contact us at support@seedsensesoftware.com.</p>
+        .page-title {
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 800;
+            letter-spacing: -0.04em;
+            line-height: 1.1;
+            margin-bottom: 16px;
+        }
+
+        .page-meta {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .meta-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 5px 14px;
+            background: rgba(91,106,247,0.1);
+            border: 1px solid rgba(91,106,247,0.2);
+            border-radius: 100px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #a5adfb;
+        }
+
+        .meta-date {
+            font-size: 0.83rem;
+            color: var(--text-muted);
+        }
+
+        /* ── POLICY CONTENT ──────────────────────────── */
+        .policy-body {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .policy-section {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 36px 40px;
+            transition: border-color 0.25s;
+        }
+
+        .policy-section:hover { border-color: var(--border-hover); }
+
+        .policy-section-header {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            margin-bottom: 16px;
+        }
+
+        .section-num {
+            flex-shrink: 0;
+            width: 32px; height: 32px;
+            background: rgba(91,106,247,0.1);
+            border: 1px solid rgba(91,106,247,0.2);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.72rem;
+            font-weight: 800;
+            color: #a5adfb;
+            letter-spacing: 0.02em;
+            margin-top: 2px;
+        }
+
+        .policy-section h2 {
+            font-size: 1.05rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            color: var(--text);
+        }
+
+        .policy-section p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            line-height: 1.8;
+            padding-left: 48px;
+        }
+
+        /* Intro block */
+        .policy-intro {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 36px 40px;
+            margin-bottom: 8px;
+            font-size: 0.92rem;
+            color: var(--text-muted);
+            line-height: 1.85;
+        }
+
+        .policy-intro strong { color: var(--text); font-weight: 600; }
+
+        /* Contact card */
+        .contact-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 36px 40px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 24px;
+            flex-wrap: wrap;
+            margin-top: 8px;
+        }
+
+        .contact-card-text h3 {
+            font-size: 1rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            margin-bottom: 6px;
+        }
+
+        .contact-card-text p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .email-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+            padding: 12px 22px;
+            background: rgba(91,106,247,0.1);
+            border: 1px solid rgba(91,106,247,0.22);
+            border-radius: 100px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #a5adfb;
+            text-decoration: none;
+            transition: all 0.25s;
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+
+        .email-pill:hover {
+            background: rgba(91,106,247,0.18);
+            border-color: rgba(91,106,247,0.4);
+            color: #c5cbfd;
+            transform: translateY(-1px);
+        }
+
+        /* ── FOOTER ──────────────────────────────────── */
+        footer {
+            padding: 36px 48px;
+            border-top: 1px solid var(--border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .footer-logo { font-size: 0.95rem; font-weight: 800; letter-spacing: -0.03em; color: var(--text); text-decoration: none; }
+        .footer-logo span { color: var(--accent); }
+
+        .footer-links { display: flex; gap: 28px; list-style: none; }
+        .footer-links a { font-size: 0.83rem; color: var(--text-muted); transition: color 0.2s; text-decoration: none; }
+        .footer-links a:hover { color: var(--text); }
+
+        .footer-copy { font-size: 0.78rem; color: var(--text-faint); }
+
+        /* ── ANIMATIONS ──────────────────────────────── */
+        .fade-up {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.55s ease, transform 0.55s ease;
+        }
+
+        .fade-up.in { opacity: 1; transform: translateY(0); }
+
+        /* ── RESPONSIVE ──────────────────────────────── */
+        @media (max-width: 760px) {
+            nav { padding: 16px 24px; }
+            .nav-links { display: none; }
+            main { padding: 110px 18px 80px; }
+            .policy-section { padding: 28px 24px; }
+            .policy-section p { padding-left: 0; margin-top: 12px; }
+            .policy-intro { padding: 28px 24px; }
+            .contact-card { padding: 28px 24px; flex-direction: column; align-items: flex-start; }
+            footer { flex-direction: column; align-items: flex-start; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+    <a href="/" class="nav-logo">Onda <span>Software</span></a>
+    <ul class="nav-links">
+        <li><a href="/#projects">Work</a></li>
+        <li><a href="/#capabilities">Capabilities</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="contact" class="nav-cta">Get in Touch</a></li>
+    </ul>
+</nav>
+
+<main>
+    <div class="container">
+
+        <!-- Header -->
+        <div class="page-header fade-up">
+            <div class="breadcrumb">
+                <a href="/">Onda Software</a>
+                <span>›</span>
+                <a href="https://seedsensesoftware.com" target="_blank" rel="noopener">SeedSense</a>
+                <span>›</span>
+                Privacy Policy
+            </div>
+            <h1 class="page-title">SeedSense Privacy Policy</h1>
+            <div class="page-meta">
+                <span class="meta-badge">
+                    <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/></svg>
+                    Current
+                </span>
+                <span class="meta-date">Effective Date: November 19, 2024</span>
+            </div>
+        </div>
+
+        <!-- Intro -->
+        <div class="policy-intro fade-up">
+            This Privacy Policy describes how <strong>Onda Software Solutions LLC</strong> ("we", "us", or "our") collects, uses, and protects the data of users ("you" or "your") when using the <strong>SeedSense</strong> software application ("SeedSense" or "the App"). By using SeedSense, you agree to the terms outlined in this policy.
+        </div>
+
+        <!-- Sections -->
+        <div class="policy-body fade-up">
+
+            <div class="policy-section">
+                <div class="policy-section-header">
+                    <div class="section-num">01</div>
+                    <h2>Data Collection</h2>
+                </div>
+                <p>SeedSense collects data inputted by users, including but not limited to company information, trial data and notes, user activity, and location data.</p>
+            </div>
+
+            <div class="policy-section">
+                <div class="policy-section-header">
+                    <div class="section-num">02</div>
+                    <h2>Data Usage</h2>
+                </div>
+                <p>The data collected is used internally at Onda Software Solutions LLC for purposes including but not limited to training internal models, data analysis, and improving the functionality of the SeedSense application.</p>
+            </div>
+
+            <div class="policy-section">
+                <div class="policy-section-header">
+                    <div class="section-num">03</div>
+                    <h2>Data Sharing</h2>
+                </div>
+                <p>We do not share any collected data with third parties or other clients. Your data remains private and is used solely for internal purposes.</p>
+            </div>
+
+            <div class="policy-section">
+                <div class="policy-section-header">
+                    <div class="section-num">04</div>
+                    <h2>Data Storage</h2>
+                </div>
+                <p>All collected data is stored on cloud servers with standard security measures in place to protect user data.</p>
+            </div>
+
+            <div class="policy-section">
+                <div class="policy-section-header">
+                    <div class="section-num">05</div>
+                    <h2>User Consent and Data Usage</h2>
+                </div>
+                <p>By using SeedSense, enterprise customers agree that data generated through the use of SeedSense will be collected and utilized internally by Onda Software Solutions LLC. Customers can contact us to request the deletion of their data at any time.</p>
+            </div>
+
+            <div class="policy-section">
+                <div class="policy-section-header">
+                    <div class="section-num">06</div>
+                    <h2>Data Retention</h2>
+                </div>
+                <p>Data is stored indefinitely unless a deletion request is made by the customer.</p>
+            </div>
+
+            <div class="policy-section">
+                <div class="policy-section-header">
+                    <div class="section-num">07</div>
+                    <h2>User Data Access and Updates</h2>
+                </div>
+                <p>Users can update their data by adjusting it within the SeedSense platform, which will update the data we collect.</p>
+            </div>
+
+            <div class="policy-section">
+                <div class="policy-section-header">
+                    <div class="section-num">08</div>
+                    <h2>Security Measures</h2>
+                </div>
+                <p>We implement standard security protocols to protect your data, including secure cloud storage.</p>
+            </div>
+
+            <div class="policy-section">
+                <div class="policy-section-header">
+                    <div class="section-num">09</div>
+                    <h2>Third-Party Services</h2>
+                </div>
+                <p>We do not share data with third parties, with the exception of our cloud storage provider.</p>
+            </div>
+
+            <div class="policy-section">
+                <div class="policy-section-header">
+                    <div class="section-num">10</div>
+                    <h2>Age Restrictions</h2>
+                </div>
+                <p>SeedSense is limited to users 18 years and older.</p>
+            </div>
+
+            <div class="policy-section">
+                <div class="policy-section-header">
+                    <div class="section-num">11</div>
+                    <h2>Device Permissions</h2>
+                </div>
+                <p>SeedSense may request device permissions such as access to your camera, location, and contacts. Users have the option to refuse GPS access on their devices.</p>
+            </div>
+
+            <div class="policy-section">
+                <div class="policy-section-header">
+                    <div class="section-num">12</div>
+                    <h2>Policy Updates</h2>
+                </div>
+                <p>Any updates to this Privacy Policy will be communicated to enterprise users via email.</p>
+            </div>
+
+        </div>
+
+        <!-- Contact -->
+        <div class="contact-card fade-up">
+            <div class="contact-card-text">
+                <h3>Questions about this policy?</h3>
+                <p>Reach out to the SeedSense support team — we're happy to help.</p>
+            </div>
+            <a href="mailto:support@seedsensesoftware.com" class="email-pill">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="2" y="4" width="20" height="16" rx="2"/>
+                    <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+                </svg>
+                support@seedsensesoftware.com
+            </a>
+        </div>
+
+    </div>
+</main>
+
+<!-- FOOTER -->
+<footer>
+    <a href="/" class="footer-logo">Onda <span>Software</span></a>
+    <ul class="footer-links">
+        <li><a href="/">Work</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/contact">Contact</a></li>
+        <li><a href="/seedsensepolicy">Privacy Policy</a></li>
+    </ul>
+    <div class="footer-copy">© 2025 Onda Software Solutions LLC</div>
+</footer>
+
+<script>
+    const io = new IntersectionObserver((entries) => {
+        entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); });
+    }, { threshold: 0.08 });
+
+    document.querySelectorAll('.fade-up').forEach(el => io.observe(el));
+</script>
 </body>
-</html>
-							</div>
-						</section>
-					</article>
-
-				<!-- Footer -->
-					<footer id="footer">
-						
-						<ul class="copyright">
-						<li><a href="https://ondasoftware.com/">Onda Software Solutions LLC</a></li>
-						</ul>
-					</footer>
-
-			</div>
-
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
-
-	</body>
 </html>
