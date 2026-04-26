@@ -103,19 +103,18 @@
         }
 
         /* ── HERO ────────────────────────────────────── */
-        #hero {
+        /* ── LOGO SPLASH ─────────────────────────────────── */
+        #hero-logo-section {
             min-height: 100vh;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            text-align: center;
-            padding: 130px 24px 90px;
             position: relative;
             overflow: hidden;
         }
 
-        #hero::before {
+        #hero-logo-section::before {
             content: '';
             position: absolute;
             inset: 0;
@@ -126,12 +125,7 @@
             animation: pulseGrad 8s ease-in-out infinite alternate;
         }
 
-        @keyframes pulseGrad {
-            0% { opacity: 0.65; transform: scale(1); }
-            100% { opacity: 1; transform: scale(1.06); }
-        }
-
-        #hero::after {
+        #hero-logo-section::after {
             content: '';
             position: absolute;
             inset: 0;
@@ -140,6 +134,45 @@
                 linear-gradient(90deg, rgba(255,255,255,0.022) 1px, transparent 1px);
             background-size: 64px 64px;
             mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 20%, transparent 80%);
+        }
+
+        @keyframes pulseGrad {
+            0% { opacity: 0.65; transform: scale(1); }
+            100% { opacity: 1; transform: scale(1.06); }
+        }
+
+        .hero-logo-img {
+            width: 540px;
+            max-width: 80vw;
+            position: relative;
+            z-index: 1;
+            will-change: transform, opacity;
+            filter: brightness(0) invert(1) sepia(0.25) saturate(1.8) hue-rotate(205deg) drop-shadow(0 0 55px rgba(91,106,247,0.55));
+            animation: logoFadeIn 1.2s cubic-bezier(0.22, 1, 0.36, 1) both;
+        }
+
+        @keyframes logoFadeIn {
+            from { opacity: 0; transform: translateY(24px) scale(0.97); }
+            to   { opacity: 1; transform: translateY(0) scale(1); }
+        }
+
+        /* ── HERO TEXT ────────────────────────────────────── */
+        #hero {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 120px 24px 100px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        #hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse 70% 50% at 50% 0%, rgba(91,106,247,0.16) 0%, transparent 70%);
         }
 
         .hero-content {
@@ -844,13 +877,20 @@
     </ul>
 </nav>
 
+<!-- LOGO SPLASH -->
+<section id="hero-logo-section">
+    <img src="images/logo-onda.png" alt="Onda Software Solutions" class="hero-logo-img" id="heroLogoImg">
+    <div class="scroll-hint">
+        <div class="scroll-line"></div>
+    </div>
+</section>
+
 <!-- HERO -->
 <section id="hero">
     <div class="hero-content">
-        <div class="hero-badge">Custom Software Studio</div>
         <h1 class="hero-title">
-            We build software<br>
-            that <span class="gradient-text">actually works.</span>
+            Custom software for<br>
+            <span class="gradient-text">problems worth solving.</span>
         </h1>
         <p class="hero-subtitle">
             Onda Software Solutions partners with businesses to design and ship custom tools that solve real problems — from field trials to contractor pricing to subscription management.
@@ -859,9 +899,6 @@
             <a href="#projects" class="btn-primary">See Our Work</a>
             <a href="contact" class="btn-secondary">Start a Project →</a>
         </div>
-    </div>
-    <div class="scroll-hint">
-        <div class="scroll-line"></div>
     </div>
 </section>
 
@@ -1017,32 +1054,26 @@
         <h2 class="section-title">Full-stack, from idea to launch.</h2>
         <div class="cap-grid fade-up">
             <div class="cap-item">
-                <div class="cap-icon">📱</div>
                 <div class="cap-title">Mobile Apps</div>
                 <p class="cap-desc">iOS and Android apps built for real-world conditions — including offline-first architecture for field and remote environments where signal is unreliable.</p>
             </div>
             <div class="cap-item">
-                <div class="cap-icon">🌐</div>
                 <div class="cap-title">Web Platforms</div>
                 <p class="cap-desc">Scalable web applications with clean interfaces and robust backends, designed to fit seamlessly into your existing tools and workflows.</p>
             </div>
             <div class="cap-item">
-                <div class="cap-icon">🔗</div>
                 <div class="cap-title">Integrations</div>
                 <p class="cap-desc">Connect your software with tools you already use — QuickBooks, Procore, Workiz, Jobber, and any platform with an API.</p>
             </div>
             <div class="cap-item">
-                <div class="cap-icon">📊</div>
                 <div class="cap-title">Data & Reporting</div>
                 <p class="cap-desc">Turn raw business data into actionable insights. We build custom dashboards, automated PDF exports, and analytics tailored to how you make decisions.</p>
             </div>
             <div class="cap-item">
-                <div class="cap-icon">⚙️</div>
                 <div class="cap-title">Spreadsheet Replacement</div>
                 <p class="cap-desc">If your team is running critical workflows on spreadsheets, we replace them with purpose-built tools that scale, track, and adapt as you grow.</p>
             </div>
             <div class="cap-item">
-                <div class="cap-icon">🛡️</div>
                 <div class="cap-title">Ongoing Support</div>
                 <p class="cap-desc">We don't disappear post-launch. Continuous maintenance, regular updates, and feature enhancements keep your software ahead of your business.</p>
             </div>
@@ -1061,25 +1092,21 @@
         <div class="process-steps fade-up">
             <div class="step-card">
                 <div class="step-num">01</div>
-                <div class="step-icon-box">🔍</div>
                 <h3>Understand the Problem</h3>
                 <p>Every engagement starts with listening. We dig deep into your workflows, constraints, and goals through thorough consultations. We fix root causes — not symptoms.</p>
             </div>
             <div class="step-card d1">
                 <div class="step-num">02</div>
-                <div class="step-icon-box">✏️</div>
                 <h3>Design the Solution</h3>
                 <p>We craft intuitive interfaces and user flows tailored to how your team actually works. Wireframes and prototypes let you see and react to the product before a line of code is written.</p>
             </div>
             <div class="step-card d2">
                 <div class="step-num">03</div>
-                <div class="step-icon-box">💻</div>
                 <h3>Build & Iterate</h3>
                 <p>Our agile process means you see real progress continuously. Regular demos, open communication, and fast iteration cycles — no surprises at the end of a long development phase.</p>
             </div>
             <div class="step-card d3">
                 <div class="step-num">04</div>
-                <div class="step-icon-box">🚀</div>
                 <h3>Deploy & Support</h3>
                 <p>Smooth launch with thorough testing and team onboarding. Then we stay with you — shipping updates, fixing bugs, and building new features as your business evolves.</p>
             </div>
@@ -1119,6 +1146,19 @@
     window.addEventListener('scroll', () => {
         nav.classList.toggle('scrolled', window.scrollY > 50);
     }, { passive: true });
+
+    // Logo parallax
+    const heroLogoImg = document.getElementById('heroLogoImg');
+    const heroLogoSection = document.getElementById('hero-logo-section');
+    if (heroLogoImg && heroLogoSection) {
+        window.addEventListener('scroll', () => {
+            const scrollY = window.scrollY;
+            const sectionH = heroLogoSection.offsetHeight;
+            const progress = scrollY / sectionH;
+            heroLogoImg.style.transform = `translateY(${scrollY * 0.38}px)`;
+            heroLogoImg.style.opacity = Math.max(0, 1 - progress * 1.4);
+        }, { passive: true });
+    }
 
     // Fade-up on scroll
     const io = new IntersectionObserver((entries) => {
